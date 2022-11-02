@@ -463,36 +463,36 @@
 
 // console.log(cleanTransactionsList(["  1.9 ", "16.4", 17, " 1 dollar "]));
 
-export function reverseArray(arr) {
-  if (!Array.isArray(arr)) {
-    return null;
-  }
-  let newArr = [...arr];
-  return newArr.reverse();
-}
+// export function reverseArray(arr) {
+//   if (!Array.isArray(arr)) {
+//     return null;
+//   }
+//   let newArr = [...arr];
+//   return newArr.reverse();
+// }
 
-export function withdraw(clients, balances, client, amount) {
-  if (!Array.isArray(clients)) {
-    return null;
-  }
-  if (!Array.isArray(balances)) {
-    return null;
-  }
+// export function withdraw(clients, balances, client, amount) {
+//   if (!Array.isArray(clients)) {
+//     return null;
+//   }
+//   if (!Array.isArray(balances)) {
+//     return null;
+//   }
 
-  return (balances[clients.indexOf(client)] =
-    balances[clients.indexOf(client)] - amount > 0
-      ? (balances[clients.indexOf(client)] =
-          balances[clients.indexOf(client)] - amount)
-      : -1);
-}
+//   return (balances[clients.indexOf(client)] =
+//     balances[clients.indexOf(client)] - amount > 0
+//       ? (balances[clients.indexOf(client)] =
+//           balances[clients.indexOf(client)] - amount)
+//       : -1);
+// }
 
-export const getAdults = (obj) => {
-  const filteredPeoples = Object.entries(obj).filter(
-    (persone) => persone[1] >= 18
-  );
-  let result = {};
-  filteredPeoples.forEach((person) => (result[person[0]] = person[1]));
-  return result;
-};
+// export const getAdults = (obj) => {
+//   const filteredPeoples = Object.entries(obj).filter(
+//     (persone) => persone[1] >= 18
+//   );
+//   let result = {};
+//   filteredPeoples.forEach((person) => (result[person[0]] = person[1]));
+//   return result;
+// };
 
-console.log(getAdults({}));
+// console.log(getAdults({}));
