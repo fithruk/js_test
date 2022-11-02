@@ -39,6 +39,6 @@ const onFormSubmit = (event) => {
   alert(JSON.stringify(formData));
 };
 
-emailInputElem.addEventListener("change", onEmailChange);
-passwordInputElem.addEventListener("change", onPasswordChange);
+emailInputElem.addEventListener("input", onEmailChange);
+passwordInputElem.addEventListener("input", onPasswordChange);
 formElem.addEventListener("submit", onFormSubmit);
