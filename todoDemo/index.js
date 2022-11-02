@@ -56,6 +56,9 @@ function handleCheckBox(e) {
 }
 
 function crateTask() {
+  if (taskInput.value == "") {
+    return;
+  }
   let newTask = {
     text: taskInput.value,
     done: false,
