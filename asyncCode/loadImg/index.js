@@ -4,9 +4,9 @@ export const addImage = (imgSrc, callback) => {
   const imgElem = document.createElement("img");
   imgElem.setAttribute("alt", "Photo");
   imgElem.src = imgSrc;
-  containerElem.appendChild(imgElem);
 
   const onImageLoaded = () => {
+    containerElem.appendChild(imgElem);
     callback(null, imgElem);
   };
 
