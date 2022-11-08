@@ -5,7 +5,7 @@ const locationEl = document.querySelector(".user__location");
 const inputEl = document.querySelector(".name-form__input");
 
 const link = `https://api.github.com/users/`;
-let value = "";
+let value = inputEl.value;
 
 const getData = async (username) => {
   return await fetch(`${link}${username}`).then((data) => data.json());
