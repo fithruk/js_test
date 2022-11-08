@@ -1,4 +1,4 @@
-const btn = document.querySelector(".name-form__btn");
+const show = document.querySelector(".name-form__btn");
 const avatarEl = document.querySelector(".user__avatar");
 const nameEl = document.querySelector(".user__name");
 const locationEl = document.querySelector(".user__location");
@@ -22,7 +22,7 @@ const renderNewData = (data) => {
   locationEl.textContent = location ? `from ${location}` : "";
 };
 
-const loadData = () => {
+const onloadData = () => {
   //   if (value === "") {
   //     alert("Fill the field!");
   //     return;
@@ -31,4 +31,4 @@ const loadData = () => {
 };
 
 inputEl.addEventListener("change", onChangeHandler);
-btn.addEventListener("click", loadData);
+show.addEventListener("click", onloadData);
