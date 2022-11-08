@@ -23,9 +23,7 @@ const renderNewData = (data) => {
   inputEl.value = "";
 };
 
-const onloadData = () => {
-  getData(value).then((data) => renderNewData(data));
-};
-
 inputEl.addEventListener("change", onChangeHandler);
-show.addEventListener("click", onloadData);
+show.addEventListener("click", () => {
+  getData(value).then((data) => renderNewData(data));
+});
