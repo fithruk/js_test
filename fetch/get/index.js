@@ -23,10 +23,10 @@ const renderNewData = (data) => {
 };
 
 const loadData = () => {
-  if (value === "") {
-    alert("Fill the field!");
-    return;
-  }
+  //   if (value === "") {
+  //     alert("Fill the field!");
+  //     return;
+  //   }
   getData(value).then((data) => renderNewData(data));
 };
 
