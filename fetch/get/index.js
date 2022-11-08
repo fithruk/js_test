@@ -20,13 +20,10 @@ const renderNewData = (data) => {
   nameEl.textContent = name;
   avatarEl.src = avatar_url;
   locationEl.textContent = location ? `from ${location}` : "";
+  inputEl.value = "";
 };
 
 const onloadData = () => {
-  //   if (value === "") {
-  //     alert("Fill the field!");
-  //     return;
-  //   }
   getData(value).then((data) => renderNewData(data));
 };
 
