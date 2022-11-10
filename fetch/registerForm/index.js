@@ -4,7 +4,7 @@ const buttonElem = document.querySelector(".submit-button");
 const url = "https://636b6df9ad62451f9fb14be5.mockapi.io/api/v1/users";
 
 const sentUserData = (userData) => {
-  return fetch("https://636b6df9ad62451f9fb14be5.mockapi.io/api/v1/users", {
+  return fetch("url", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
@@ -21,8 +21,10 @@ const submitForm = (e) => {
   const formData = Object.fromEntries(new FormData(formElem));
   sentUserData(formData)
     .then((data) => data.json())
-    .then((data) => alert(JSON.stringify(data, null, 2)));
-  formElem.reset();
+    .then((data) => {
+      alert(JSON.stringify(data, null, 2));
+      formElem.reset();
+    });
 };
 
 formElem.addEventListener("input", checkValidtate);
