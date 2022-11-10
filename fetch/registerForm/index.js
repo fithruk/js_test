@@ -22,7 +22,7 @@ const submitForm = (e) => {
   sentUserData(formData)
     .then((data) => data.json())
     .then((data) => {
-      alert(JSON.stringify(data, null, 2));
+      alert(JSON.stringify(data));
       formElem.reset();
     });
 };
