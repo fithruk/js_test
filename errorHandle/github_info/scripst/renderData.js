@@ -16,7 +16,6 @@ const defaultUser = {
 
 const renderNewData = (data = defaultUser) => {
   const { avatar_url, name, location } = data;
-
   nameEl.textContent = name;
   avatarEl.src = avatar_url;
   locationEl.textContent = location ? `from ${location}` : "";
@@ -24,9 +23,7 @@ const renderNewData = (data = defaultUser) => {
 };
 
 const onloadRepoData = (url) => {
-  return getRepoData(url)
-    .then((repoData) => repoData)
-    .catch((e) => alert("Failed to load data"));
+  return getRepoData(url).then((repoData) => repoData);
 };
 
 const onloadData = () => {
@@ -39,8 +36,8 @@ const onloadData = () => {
         renderListItems(repoData);
       })
     )
-    .then(() => spinnerEl.classList.toggle("spinner_hidden"))
-    .catch((e) => alert("Failed to load data"));
+    .catch((e) => alert("Failed to load data"))
+    .then(() => spinnerEl.classList.toggle("spinner_hidden"));
 };
 
 show.addEventListener("click", onloadData);
