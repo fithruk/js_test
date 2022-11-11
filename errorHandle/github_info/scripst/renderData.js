@@ -48,9 +48,14 @@ const onloadData = () => {
       return data.repos_url;
     })
     .then((url) => onloadRepoData(url))
-    .then((repolist) => renderListItems(repolist))
-    .catch((e) => alert("Failed to load data"))
-    .then(() => spinnerEl.classList.toggle("spinner_hidden"));
+    .then((repolist) => {
+      spinnerEl.classList.toggle("spinner_hidden");
+      renderListItems(repolist);
+    })
+    .catch((e) => {
+      spinnerEl.classList.toggle("spinner_hidden");
+      alert("Failed to load data");
+    });
 };
 
 show.addEventListener("click", onloadData);
