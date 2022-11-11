@@ -1,4 +1,4 @@
-import { renderNewData } from "./renderData.js";
+import { renderNewData } from "./scripst/renderData.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   renderNewData();
