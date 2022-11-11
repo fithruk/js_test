@@ -40,22 +40,33 @@ const onloadRepoData = (url) => {
 //     .then(() => spinnerEl.classList.toggle("spinner_hidden"));
 // };
 
-const onloadData = () => {
-  spinnerEl.classList.toggle("spinner_hidden");
-  getData(inputEl.value)
-    .then((data) => {
-      renderNewData(data);
-      return data.repos_url;
-    })
-    .then((url) => onloadRepoData(url))
-    .then((repolist) => {
-      spinnerEl.classList.toggle("spinner_hidden");
-      renderListItems(repolist);
-    })
-    .catch((e) => {
-      spinnerEl.classList.toggle("spinner_hidden");
-      alert("Failed to load data");
-    });
+const onloadData = async () => {
+  try {
+    spinnerEl.classList.toggle("spinner_hidden");
+    const userData = await getData(inputEl.value);
+    renderNewData(userData);
+    const repoList = await onloadRepoData(userData.repos_url);
+    renderListItems(repoList);
+  } catch (error) {
+    alert("Failed to load data");
+  } finally {
+    spinnerEl.classList.toggle("spinner_hidden");
+  }
+
+  // getData(inputEl.value)
+  //   .then((data) => {
+  //     renderNewData(data);
+  //     return data.repos_url;
+  //   })
+  //   .then((url) => onloadRepoData(url))
+  //   .then((repolist) => {
+  //     spinnerEl.classList.toggle("spinner_hidden");
+  //     renderListItems(repolist);
+  //   })
+  //   .catch((e) => {
+  //     spinnerEl.classList.toggle("spinner_hidden");
+  //     alert("Failed to load data");
+  //   });
 };
 
 show.addEventListener("click", onloadData);
