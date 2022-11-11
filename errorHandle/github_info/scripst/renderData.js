@@ -26,16 +26,29 @@ const onloadRepoData = (url) => {
   return getRepoData(url).then((repoData) => repoData);
 };
 
+// const onloadData = () => {
+//   spinnerEl.classList.toggle("spinner_hidden");
+//   getData(inputEl.value)
+//     .then((data) => data)
+//     .then((data) =>
+//       onloadRepoData(data.repos_url).then((repoData) => {
+//         renderNewData(data);
+//         renderListItems(repoData);
+//       })
+//     )
+//     .catch((e) => alert("Failed to load data"))
+//     .then(() => spinnerEl.classList.toggle("spinner_hidden"));
+// };
+
 const onloadData = () => {
   spinnerEl.classList.toggle("spinner_hidden");
   getData(inputEl.value)
-    .then((data) => data)
-    .then((data) =>
-      onloadRepoData(data.repos_url).then((repoData) => {
-        renderNewData(data);
-        renderListItems(repoData);
-      })
-    )
+    .then((data) => {
+      renderNewData(data);
+      return data.repos_url;
+    })
+    .then((url) => onloadRepoData(url))
+    .then((repolist) => renderListItems(repolist))
     .catch((e) => alert("Failed to load data"))
     .then(() => spinnerEl.classList.toggle("spinner_hidden"));
 };
