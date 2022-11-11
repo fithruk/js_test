@@ -9,8 +9,7 @@ const inputEl = document.querySelector(".name-form__input");
 const spinnerEl = document.querySelector(".spinner");
 
 const defaultUser = {
-  avatar_url:
-    "https://gromcode.s3.eu-central-1.amazonaws.com/front-end/javascript/lesson35/task3/default-page.png",
+  avatar_url: "https://avatars3.githubusercontent.com/u10001",
   name: "",
   location: "",
 };
